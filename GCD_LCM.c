@@ -1,31 +1,27 @@
 #include <stdio.h>
-int find_GCD_LCM(int *num1,int *num2);
+int find_GCD_LCM(int num1,int num2);
 
 int main()
 {
-	int n1,n2,call;
+	int num1,num2,a;
 	printf("Enter two numbers:");
-	scanf("%d %d",&n1,&n2);
+	scanf("%d %d",&num1,&num2);
 	
-	call=find_GCD_LCM(&n1,&n2);
-	printf("GCD=%d\nLCM=%d\n",n1,n2);
+	a=find_GCD_LCM(num1,num2);
+	
 }
-
-int find_GCD_LCM(int *num1,int *num2){
-	int a=*num1,b=*num2,c=1;
-	int d=*num1;
+int find_GCD_LCM(int num1,int num2){
+	int hcf=0,lcm;
+	int b,remainder;
 	
-	while(c!=0){
+	while(num1!=0){
+	b=(num1/num2);
 	
-	int c=a/b;
-	int remainder=a-(b*c);
-	if(remainder==0){
-	
-	*num1=b;
-	*num2=(d* *num2)/b;
-	break;
+	 remainder=num1-(num2*b);
+	if(remainder=0){
+	hcf=num2;
+	break;}
 	}
-	a=b;
-	b=remainder;
-}
+	lcm=((num1*num2)/hcf);
+	printf("HCF=%d\nLCM=%d\n",hcf,lcm);
 }
